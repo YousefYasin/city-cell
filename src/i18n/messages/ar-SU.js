@@ -11,5 +11,6 @@ export default {
     signUp: "Sign Up ",
     fullname: "Full Name",
     email: "Email",
+    login: "Login",
   },
 };
