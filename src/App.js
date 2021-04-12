@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
+import "./App.css";
+import { Provider } from "react-redux";
+import store from "./store";
+import { I18Provider, LOCALES } from "./i18n";
+import translate from "./i18n/translate";
+import Navar from "./components/layout/Navbar";
 function App() {
+  var lang;
+  if (localStorage.langCity) {
+    lang = localStorage.getItem("langCity");
+  }
+  const [locale, setLocale] = useState(lang || LOCALES.ENGLISH);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <I18Provider locale={locale}>
+      <Provider store={store}>
+        <div className="App">
+          <Navar />
+          TODOOO
+          {translate("test")}
+        </div>
+      </Provider>
+    </I18Provider>
   );
 }
 
