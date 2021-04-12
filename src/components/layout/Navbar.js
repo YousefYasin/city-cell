@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import ReactFlagsSelect from "react-flags-select";
 
-var dirction = document.getElementsByTagName("html")[0].getAttribute("dir");
 const Navbar = () => {
   useEffect(() => {
+    var dirction = document.body.dir;
     console.log(document.body.dir);
   }, []);
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-light  ${
-        dirction === "ltr" ? "bg-dark" : ""
+      className={`navbar navbar-expand-lg navbar-light "bg-light"   ${
+        document.body.dir === "ltr" ? "bg-light" : ""
       }`}
     >
       <div className="container-fluid">
