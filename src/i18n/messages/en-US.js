@@ -5,6 +5,8 @@ export default {
     test: "test from English",
     enter0: "Enter your Full name",
     enter1: "Enter your Email",
+    enter2: "Enter your mobile number",
+    enter3: "Enter your address",
     register1: "Sign Up",
     confirmPassword: "Confirm password",
     password: "Password",
@@ -12,5 +14,9 @@ export default {
     fullname: "Full Name",
     email: "Email",
     login: "Login",
+    mobileNumber: "Mobile Num.",
+    village: "Village",
+    address: "Address",
+    haveAccount: "already have an account? ",
   },
 };

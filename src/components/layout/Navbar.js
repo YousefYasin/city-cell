@@ -1,22 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ReactFlagsSelect from "react-flags-select";
-
+import { Link } from "react-router-dom";
+import translate from "../../i18n/translate";
+import "./nav.css";
 const Navbar = () => {
+  const [selected, setSelected] = useState("PS");
   useEffect(() => {
-    var dirction = document.body.dir;
-    console.log(document.body.dir);
+    if (localStorage.langCity === "en") {
+      setSelected("US");
+    } else if (localStorage.langCity === "is") {
+      setSelected("IL");
+    }
   }, []);
+  const onSelectLang = (code) => {
+    console.log("code", code);
+    if (code === "US") {
+      localStorage.langCity = "en";
+    } else if (code === "PS") {
+      localStorage.langCity = "ar";
+    } else {
+      localStorage.langCity = "is";
+    }
+    window.location.reload();
+  };
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-light "bg-light"   ${
-        document.body.dir === "ltr" ? "bg-light" : ""
-      }`}
+      className="navbar navbar-expand-lg navbar-light "
+      style={{ backgroundColor: "#25ace3" }}
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Navbar
+          City-Cell
         </a>
-
         <button
           className="navbar-toggler"
           type="button"
@@ -31,75 +46,24 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
+              <Link className="nav-link active" to="/signUp">
+                {translate("signUp")}
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link disabled"
-                href="#"
-                tabIndex="-1"
-                aria-disabled="true"
-              >
-                Disabled
-              </a>
+              <Link className="nav-link active" to="/Login">
+                {translate("login")}
+              </Link>
             </li>
           </ul>
-          <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-            <ReactFlagsSelect
-              countries={["US", "GB", "FR", "DE", "IT"]}
-              selected={"US"}
-              showSelectedLabel={false}
-              showLabal={false}
-            />
-          </form>
+          <ReactFlagsSelect
+            countries={["PS", "US", "IL"]}
+            selected={selected}
+            customLabels={{ US: "EN-US", PS: "AR-PS", IL: "IL-ISR" }}
+            onSelect={(code) => onSelectLang(code)}
+            // showSelectedLabel={false}
+            showLabal={true}
+          />
         </div>
       </div>
     </nav>

@@ -4,9 +4,9 @@ import isEmpty from "./is_empty";
 function validateSignUpInput(data) {
   let errors = {};
 
-
   data.fullName = !isEmpty(data.fullName) ? data.fullName : "";
   data.email = !isEmpty(data.email) ? data.email : "";
+  data.mobile = !isEmpty(data.mobile) ? data.mobile : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
   //fullName
@@ -16,6 +16,9 @@ function validateSignUpInput(data) {
   if (Validator.isEmpty(data.fullName)) {
     errors.fullName = "Name field is required";
   }
+  if (Validator.isEmpty(data.mobile)) {
+    errors.mobile = "Mobile Number is required";
+  }
   //*********** */
   if (!Validator.isEmail(data.email)) {
     errors.email = "Email is invalid";
@@ -23,7 +26,6 @@ function validateSignUpInput(data) {
   if (Validator.isEmpty(data.email)) {
     errors.email = "Email field is required";
   }
-
 
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";

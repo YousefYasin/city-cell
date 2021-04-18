@@ -4,7 +4,7 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import { useIntl } from "react-intl";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import validateLoginInput from '../../validation/validateLoginInput'
+import validateLoginInput from "../../validation/validateLoginInput";
 const Login = () => {
   const intl = useIntl();
 
@@ -12,6 +12,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [confirmation, setConfirmation] = useState("");
   const [errors1, setErrors1] = useState({});
 
   const onChange = (e) => {
@@ -22,10 +23,11 @@ const Login = () => {
     const { errors, isValid } = validateLoginInput(loginForm);
     if (!isValid) {
       setErrors1(errors);
+      console.log("Errors=> ", errors);
     }
   };
   return (
-    <div className="container-fluid bg-login">
+    <div className="container-fluid">
       <form onSubmit={(e) => onSubmit(e)}>
         <div className="container ">
           <div className="row  d-flex justify-content-end">

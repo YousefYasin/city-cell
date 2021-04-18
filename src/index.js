@@ -10,13 +10,15 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-if (localStorage.langCity === "ar") {
-  document.getElementsByTagName("body")[0].setAttribute("dir", "rtl");
-} else {
+if (localStorage.langCity === "en") {
   document.getElementsByTagName("body")[0].setAttribute("dir", "ltr");
+  document.getElementsByTagName("body")[0].setAttribute("lang", "en");
+} else if (!localStorage.langCity) {
+  document.getElementsByTagName("body")[0].setAttribute("dir", "ltr");
+  document.getElementsByTagName("body")[0].setAttribute("lang", "ar");
+} else {
+  document.getElementsByTagName("body")[0].setAttribute("dir", "rtl");
+  document.getElementsByTagName("body")[0].setAttribute("lang", "ar");
 }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals(console.log);

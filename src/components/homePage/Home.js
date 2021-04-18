@@ -1,11 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import translate from "../../i18n/translate";
 const Home = () => {
-    return (
-        <div>
-            HOOOOOMEEE
-        </div>
-    )
-}
+  return (
+    <div>
+      HOOOOOMEEE
+      {translate("test")}
+    </div>
+  );
+};
 
-export default Home
+export default Home;

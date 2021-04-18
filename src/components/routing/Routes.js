@@ -5,7 +5,7 @@ import SignUp from "../auth/SignUp";
 
 const Routes = (props) => {
   return (
-    <section className="container">
+    <section className="container-fluid">
       <Switch>
         <Route exact path="/signUp" component={SignUp} />
         <Route exact path="/login" component={Login} />

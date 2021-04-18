@@ -1,0 +1,11 @@
+.sign-but {
+  background-color: #25ace3;
+  color: #fff;
+  font-weight: bold !important;
+}
+.sign-but:hover {
+  color: #fff;
+}
+.sign-text {
+  color: #25ace3;
+}
