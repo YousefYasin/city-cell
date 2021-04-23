@@ -9,7 +9,7 @@ const Login = () => {
   const intl = useIntl();
 
   const [loginForm, setLoginForm] = useState({
-    email: "",
+    userName: "",
     password: "",
   });
   const [confirmation, setConfirmation] = useState("");
@@ -29,44 +29,60 @@ const Login = () => {
   return (
     <div className="container-fluid">
       <form onSubmit={(e) => onSubmit(e)}>
-        <div className="container ">
-          <div className="row  d-flex justify-content-end">
-            <div className="col-lg-7 col-md-6"></div>
-            <div className="col-lg-5 col-md-6 mt-5">
-              <div
-                className="card "
-                style={{ border: "5px solid #5f8bdc", borderRadius: "12px" }}
-              >
-                <div className="form-cover  text-left m-4">
-                  <h4 className="mt-3">
-                    <strong>{translate("signUp")}</strong>
-                  </h4>
-
-                  <small className="form-text text-muted text-left">
-                    {translate("email")}
-                  </small>
-                  <TextFieldGroup
-                    placeholder={intl.formatMessage({ id: "enter1" })}
-                    name="email"
-                    type="email"
-                    value={loginForm.email}
-                    onChange={onChange}
-                    //   error={emailError ? emailError : errors1.email}
-                  />
-                  <small className="form-text text-muted text-left">
-                    {translate("password")}
-                  </small>
-                  <TextFieldGroup
-                    placeholder={intl.formatMessage({ id: "password" })}
-                    name="password"
-                    type="password"
-                    value={loginForm.password}
-                    onChange={onChange}
-                    error={errors1.password}
-                  />
-
+        <div className=" ">
+          <div className="row ">
+            <div className="col-md-4 mt-5">
+              <div className="card mt-5">
+                <img src="https://res.cloudinary.com/dznido8dg/image/upload/v1603525588/Group_2489_2x_jgvdlx.png" />
+              </div>
+            </div>
+            <div className="col-lg-8 col-md-8 mt-5">
+              <div className="card0 mt-5 ">
+                <h4 className="m-4 sign-text">
+                  <strong>{translate("login")}</strong>
+                </h4>
+                <div className="  text-left m-4">
+                  <div className="row mb-3">
+                    <label
+                      for="inputEmail3"
+                      className="col-sm-2 col-form-label"
+                    >
+                      {translate("userName")}
+                    </label>
+                    <div className="col-sm-5">
+                      <TextFieldGroup
+                        className="mb-5"
+                        placeholder={intl.formatMessage({ id: "enter4" })}
+                        name="userName"
+                        type="text"
+                        value={loginForm.userName}
+                        onChange={onChange}
+                        error={errors1.userName}
+                      />
+                    </div>
+                  </div>
+                  <div className="row mb-3">
+                    <label
+                      for="inputEmail3"
+                      className="col-sm-2 col-form-label"
+                    >
+                      {translate("password")}
+                    </label>
+                    <div className="col-sm-5">
+                      <TextFieldGroup
+                        placeholder={intl.formatMessage({ id: "password" })}
+                        name="password"
+                        type="password"
+                        value={loginForm.password}
+                        onChange={onChange}
+                        error={errors1.password}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-8">
                   <button
-                    className="btn  btn-secondary mb-4 mt-4 ml-5 "
+                    className="btn sign-but m-4 "
                     type="submit"
                     id="reg"
                     style={{ width: "100%" }}

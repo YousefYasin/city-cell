@@ -7,6 +7,7 @@ export default {
     enter1: "Enter your Email",
     enter2: "Enter your mobile number",
     enter3: "Enter your address",
+    enter4: "Enter your user name",
     register1: "Sign Up",
     confirmPassword: "Confirm password",
     password: "Password",
@@ -18,5 +19,7 @@ export default {
     village: "Village",
     address: "Address",
     haveAccount: "already have an account? ",
+    userName: "User name",
+
   },
 };

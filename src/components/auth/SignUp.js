@@ -13,6 +13,7 @@ const SignUp = () => {
     mobile: "",
     password: "",
     password2: "",
+    address: "",
   });
   const [errors1, setErrors1] = useState({});
 
@@ -43,6 +44,19 @@ const SignUp = () => {
                   <strong>{translate("signUp")}</strong>
                 </h4>
                 <div className="  text-left m-4">
+                  <div className="row mb-3">
+                    <label
+                      for="inputEmail3"
+                      className="col-sm-2 col-form-label"
+                    >
+                      {translate("userName")}
+                    </label>
+                    <div className="col-sm-5">
+                      <label for="inputEmail3" className="col-form-label">
+                        From back-end
+                      </label>
+                    </div>
+                  </div>
                   <div className="row mb-3">
                     <label
                       for="inputEmail3"
@@ -134,10 +148,10 @@ const SignUp = () => {
                       <TextFieldGroup
                         className="mb-5"
                         placeholder={intl.formatMessage({ id: "enter3" })}
-                        name="fullName"
-                        value={signUpForm.fullName}
+                        name="address"
+                        value={signUpForm.address}
                         onChange={onChange}
-                        error={errors1.fullName}
+                        // error={errors1.address}
                       />
                     </div>
                   </div>
@@ -181,9 +195,8 @@ const SignUp = () => {
                   </div>
                   <div className="col-md-7">
                     <button
-                      className="btn   sign-but "
+                      className="btn sign-but "
                       type="submit"
-                      id="reg"
                       style={{ width: "100%" }}
                     >
                       {translate("register1")}

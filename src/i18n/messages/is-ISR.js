@@ -18,5 +18,6 @@ export default {
     village: "Village",
     address: "Address",
     haveAccount: "already have an account? ",
+    userName: "User name",
   },
 };

@@ -29,9 +29,12 @@ const Navbar = () => {
       style={{ backgroundColor: "#25ace3" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          City-Cell
-        </a>
+        <Link className="navbar-brand" to="/">
+          <strong>
+
+          City-Ce<font color="#fff">ll</font>
+          </strong>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
