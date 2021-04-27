@@ -20,7 +20,7 @@ const TextFieldGroup = ({
       <input
         //  id="exampleFormControlInput1"
         type={type}
-        className={classnames("form-control form-control-lg rounded", {
+        className={classnames("form-control form-control-lg rounded input-field", {
           "is-invalid": error,
         })}
         placeholder={placeholder}

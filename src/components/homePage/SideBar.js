@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-
+import translate from "../../i18n/translate";
 const SideBar = () => {
   const history = useHistory().location.pathname;
   return (
     <div>
-      <div className="card">
+      <div className="card d100-vh">
         <div className="card card-bal m-3">
           <div className="m-3 text-center">
             <h6 style={{ fontWeight: "700" }}>
@@ -13,10 +13,10 @@ const SideBar = () => {
                 className="icon-main fa fa-balance-scale m-1"
                 aria-hidden="true"
               />
-              Balance Avaliable
+              {translate("balance")}
             </h6>
             <h4 className="main-text mt-3" style={{ fontWeight: "bolder" }}>
-              245,563 NIS
+              245,563 {translate("nis")}
             </h4>
           </div>
         </div>
@@ -27,41 +27,72 @@ const SideBar = () => {
             <Link className=" link-main " to="/">
               <span>
                 <i className="icon-main fa fa-home m-2"></i>
-                Home
+                {translate("home")}
               </span>
             </Link>
           </div>
-          <div className="sidebar__link m-4 ">
-            <Link className=" link-main" to="/">
-              <span>
-                <i className="icon-main fa fa-phone m-2" aria-hidden="true"></i>
-                Telecommunications
-              </span>
-            </Link>
-          </div>
-          <div className="sidebar__link m-4 ">
-            <Link className="link-main " to="/">
+
+          <div
+            className={`sidebar__link ${
+              history === "/gaming" && "active-link"
+            } m-4`}
+          >
+            <Link className="link-main " to="/gaming">
               <span>
                 <i
                   className="icon-main fa fa-gamepad  m-2"
                   aria-hidden="true"
                 ></i>
-                Gaming
+                {translate("gaming")}
               </span>
             </Link>
           </div>
-          <div className="sidebar__link m-4 ">
-            <Link className="link-main " to="/">
+          <div
+            className={`sidebar__link ${
+              history === "/cards" && "active-link"
+            } m-4`}
+          >
+            <Link className="link-main " to="/cards">
               <span>
                 <i
                   className="icon-main fa fa-credit-card  m-2"
                   aria-hidden="true"
                 ></i>
-                Electornic Cards
+                {translate("cards")}
+              </span>
+            </Link>
+          </div>
+          <div
+            className={`sidebar__link ${
+              history === "/points" && "active-link"
+            } m-4`}
+          >
+            <Link className="link-main " to="/points">
+              <span>
+                <i
+                  className="icon-main fa fa-hand-pointer  m-2"
+                  aria-hidden="true"
+                ></i>
+                {translate("points")}
               </span>
             </Link>
           </div>
 
+          <div
+            className={`sidebar__link ${
+              history === "/messages" && "active-link"
+            } m-4`}
+          >
+            <Link className="link-main " to="/messages">
+              <span>
+                <i
+                  className="icon-main fa fa-comments  m-2"
+                  aria-hidden="true"
+                ></i>
+                {translate("messages")}
+              </span>
+            </Link>
+          </div>
           <div
             className={`sidebar__link ${
               history === "/report" && "active-link"
@@ -70,7 +101,7 @@ const SideBar = () => {
             <Link className="link-main " to="/report">
               <span>
                 <i className="icon-main fa fa-file m-2" aria-hidden="true"></i>
-                Report
+                {translate("Report")}
               </span>
             </Link>
           </div>

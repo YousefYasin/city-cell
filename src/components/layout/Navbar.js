@@ -31,8 +31,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <strong>
-
-          City-Ce<font color="#fff">ll</font>
+            City-Ce<font color="#fff">ll</font>
           </strong>
         </Link>
         <button
@@ -60,6 +59,7 @@ const Navbar = () => {
             </li>
           </ul>
           <ReactFlagsSelect
+            color={"#fff"}
             countries={["PS", "US", "IL"]}
             selected={selected}
             customLabels={{ US: "EN-US", PS: "AR-PS", IL: "IL-ISR" }}

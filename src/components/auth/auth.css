@@ -10,7 +10,7 @@ div,
 td,
 label h4 {
   font-family: "Montserrat", sans-serif;
-  color: #000000;
+  /* color: #000000; */
 }
 
 body,
@@ -19,6 +19,9 @@ td {
 }
 label {
   font-weight: 700;
+}
+a {
+  font-weight: bold;
 }
 .card {
   border: none;
@@ -66,8 +69,7 @@ label {
   border: 10px #45b4e3 !important;
 }
 .active-link > a > span {
-  padding: 12px;
-  font-weight: bolder;
+  font-weight: 900;
   color: #42ace3;
 }
 .nav-layout {
@@ -76,6 +78,41 @@ label {
 .nav-layout > h5 {
   font-weight: bold;
   color: #fff;
+  text-decoration: none !important;
+}
+.cards-layout {
+  background: #fff;
+  border: 1px solid #25ace3;
+  border-top: 0;
+  /* border-radius: 15px; */
+}
+.cards-layout > h5 {
+  font-weight: bolder;
+  font-size: 1.2rem;
+  color: #25ace3;
+  text-decoration: none !important;
+}
+
+.jawwal-layout {
+  background: #fff;
+  /* border-radius: 15px; */
+}
+.jawwal-layout > div > label {
+  font-weight: bold;
+  font-size: 1.52rem;
+  color: #25ace3;
+  text-decoration: none !important;
+}
+.mobile-no {
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+  color: #40d48a !important;
+  font-size: 1.5rem !important;
+
+  font-weight: bolder !important;
+}
+
+.outer-wrapper > a {
+  text-decoration: none;
 }
 .home-img {
   background-size: cover;
@@ -97,4 +134,13 @@ img {
   max-height: 100%;
   display: block;
   margin: 0 auto;
+}
+.d100-vh {
+  height: 100vh;
+}
+input :not(input) {
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 5.8rem;
+  font-weight: bolder !important;
 }
