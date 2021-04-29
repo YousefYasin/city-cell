@@ -4,6 +4,9 @@ import Login from "../auth/Login";
 import SignUp from "../auth/SignUp";
 import Cards from "../cards/Cards";
 import InputNoPage from "../companies/jawwal/InputNoPage";
+import Jawwal3g from "../companies/jawwal/Jawwal3g";
+import JawwalCredit from "../companies/jawwal/JawwalCredit";
+import JawwalMin from "../companies/jawwal/JawwalMin";
 import TypeChargeJa from "../companies/jawwal/TypeChargeJa";
 import Gaming from "../Gaming/Gaming";
 import Report from "../report/Report";
@@ -19,6 +22,9 @@ const Routes = () => {
         <Route exact path="/cards" component={Cards} />
         <Route exact path="/jawwalNo" component={InputNoPage} />
         <Route exact path="/jawwal/:id" component={TypeChargeJa} />
+        <Route exact path="/jawwal3g/:id" component={Jawwal3g} />
+        <Route exact path="/jawwalMin/:id" component={JawwalMin} />
+        <Route exact path="/jawwalCredit/:id" component={JawwalCredit} />
       </Switch>
     </section>
   );

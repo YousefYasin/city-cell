@@ -1,14 +1,16 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import translate from "../../i18n/translate";
-const SideBar = () => {
+import { connect } from "react-redux";
+
+const SideBar = ({ auth }) => {
   const history = useHistory().location.pathname;
   return (
     <div>
       <div className="card d100-vh">
         <div className="card card-bal m-3">
           <div className="m-3 text-center">
-            <h6 style={{ fontWeight: "700" }}>
+            <h6 >
               <i
                 className="icon-main fa fa-balance-scale m-1"
                 aria-hidden="true"
@@ -18,6 +20,7 @@ const SideBar = () => {
             <h4 className="main-text mt-3" style={{ fontWeight: "bolder" }}>
               245,563 {translate("nis")}
             </h4>
+            <h6 className ='mt-3' >Remal-Jawwal center</h6>
           </div>
         </div>
         <div className="mt-3">
@@ -110,5 +113,7 @@ const SideBar = () => {
     </div>
   );
 };
-
-export default SideBar;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+export default connect(mapStateToProps, {})(SideBar);

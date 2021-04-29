@@ -11,6 +11,7 @@ td,
 label h4 {
   font-family: "Montserrat", sans-serif;
   /* color: #000000; */
+  font-weight: bolder ;
 }
 
 body,
@@ -96,6 +97,7 @@ a {
 .jawwal-layout {
   background: #fff;
   /* border-radius: 15px; */
+  border: 1px solid #25ace3;
 }
 .jawwal-layout > div > label {
   font-weight: bold;
@@ -143,4 +145,8 @@ input :not(input) {
   font-family: "Courier New", Courier, monospace;
   font-size: 5.8rem;
   font-weight: bolder !important;
+}
+.creadit-text{
+  color: #74d099;
+  font-size: 1.5rem;
 }

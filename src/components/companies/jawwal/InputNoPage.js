@@ -7,12 +7,12 @@ import Message from "../../common/Message";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input/input";
 const InputNoPage = () => {
-  const [value, setValue] = useState("");
-  const [isEmprty, setIsEmprty] = useState(false);
-  const history = useHistory();
   useEffect(() => {
     document.title = "Home /Jawwal ";
   }, []);
+  const [value, setValue] = useState("");
+  const [isEmprty, setIsEmprty] = useState(false);
+  const history = useHistory();
 
   const onSubmit = (e) => {
     e.preventDefault();

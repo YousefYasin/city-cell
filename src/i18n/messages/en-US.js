@@ -91,5 +91,16 @@ export default {
     // jawwal page
     jawwalNo: "Mobile No:    ",
     next: "Next",
+    addCreadit: "Add Creadit",
+    g3: "3G",
+    minutes: "Minutes",
+    jawwalMin: "JAWWAL Min",
+    jawwal3g: "JAWWAL 3G",
+    jawwalCredit: "JAWWAL Credit",
+    jawwalOffer3g: "3G Offers For This Number",
+    jawwalOfferMin: "Jawwal minutes Offers For This Number",
+    jawwalOfferCredit: "Jawwal Credit Offers For This Number",
+    amount: "Amount",
+    accept: "Accept",
   },
 };

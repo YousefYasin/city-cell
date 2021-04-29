@@ -36,6 +36,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619303836/WhatsApp_Image_2021-04-18_at_7.07.02_PM_2_m8dn35.jpg"
@@ -53,6 +54,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619303853/WhatsApp_Image_2021-04-18_at_7.07.03_PM_3_dhyffb.jpg"
@@ -69,6 +71,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619303898/WhatsApp_Image_2021-04-18_at_7.07.03_PM_1_rb1fut.jpg"
@@ -85,6 +88,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619303917/WhatsApp_Image_2021-04-18_at_7.07.03_PM_aukb1a.jpg"
@@ -99,6 +103,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619303985/WhatsApp_Image_2021-04-18_at_7.07.02_PM_1_dgoy4p.jpg"
@@ -113,6 +118,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619304020/WhatsApp_Image_2021-04-18_at_7.07.02_PM_gd14qx.jpg"
@@ -127,6 +133,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619309264/netflixlogo.0.0_actdto.jpg"
@@ -143,6 +150,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131437/jawwal-logo_jrbpa3.png"
                       />
@@ -156,6 +164,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619203748/Ooredoo_logo_2017_mtdkir.png"
                       />
@@ -171,6 +180,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619394224/sBuM_UjT_400x400_bftdf9.jpg"
@@ -185,6 +195,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619394235/1606900646468_ykals5.jpg"
@@ -199,6 +210,7 @@ const Cards = () => {
                   <div className="card outer-wrapper">
                     <div className="frame">
                       <img
+                        alt=""
                         width="200px"
                         height="150px"
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619394245/Orange_logo_uwsteu.svg"

@@ -16,8 +16,8 @@ function App() {
   const [locale, setLocale] = useState(lang || LOCALES.ENGLISH);
 
   return (
-    <I18Provider locale={locale}>
-      <Provider store={store}>
+    <Provider store={store}>
+      <I18Provider locale={locale}>
         <Router>
           <Fragment>
             <Navar />
@@ -27,8 +27,8 @@ function App() {
             </Switch>
           </Fragment>
         </Router>
-      </Provider>
-    </I18Provider>
+      </I18Provider>
+    </Provider>
   );
 }
 

@@ -32,6 +32,7 @@ const Home = () => {
                   <Link to="/jawwalNo">
                     <div className="frame">
                       <img
+                        alt=""
                         src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131437/jawwal-logo_jrbpa3.png"
                         width="120px"
                       />
@@ -45,7 +46,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <div className="frame">
-                    <img src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619203748/Ooredoo_logo_2017_mtdkir.png" />
+                    <img
+                      alt=""
+                      src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619203748/Ooredoo_logo_2017_mtdkir.png"
+                    />
                   </div>
                   <div className=" card nav-layout">
                     <h5 className="m-2 text-center">{translate("ooredoo")}</h5>
@@ -55,7 +59,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <div className="frame">
-                    <img src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131463/unnamed_vyhnbk.png" />
+                    <img
+                      alt=""
+                      src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131463/unnamed_vyhnbk.png"
+                    />
                   </div>
                   <div className=" card nav-layout">
                     <h5 className="m-2 text-center">{translate("cellcom")}</h5>
@@ -65,7 +72,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <div className="frame">
-                    <img src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131481/Pelephoneisrael-1_dtntrq.png" />
+                    <img
+                      alt=""
+                      src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131481/Pelephoneisrael-1_dtntrq.png"
+                    />
                   </div>
                   <div className=" card nav-layout">
                     <h5 className="m-2 text-center">
@@ -77,7 +87,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <div className="frame">
-                    <img src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131493/GolanTelecom.svg_oyiuo3.png" />
+                    <img
+                      alt=""
+                      src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131493/GolanTelecom.svg_oyiuo3.png"
+                    />
                   </div>
                   <div className=" card nav-layout">
                     <h5 className="m-2 text-center">{translate("golan")}</h5>
@@ -87,7 +100,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <div className="frame">
-                    <img src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131496/019-mobile-new_ifamyv.png" />
+                    <img
+                      alt=""
+                      src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131496/019-mobile-new_ifamyv.png"
+                    />
                   </div>
                   <div className=" card nav-layout">
                     <h5 className="m-2 text-center">{translate("O1Mobile")}</h5>
@@ -97,7 +113,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <div className="frame">
-                    <img src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131513/1229px-012_Mobile_Logo.svg_jpmad3.png" />
+                    <img
+                      alt=""
+                      src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131513/1229px-012_Mobile_Logo.svg_jpmad3.png"
+                    />
                   </div>
                   <div className=" card nav-layout">
                     <h5 className="m-2 text-center">{translate("mobile12")}</h5>
@@ -107,7 +126,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <div className="frame">
-                    <img src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131544/Hotmobilelogo.svg_gjfklv.png" />
+                    <img
+                      alt=""
+                      src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131544/Hotmobilelogo.svg_gjfklv.png"
+                    />
                   </div>
                   <div className=" card nav-layout">
                     <h5 className="m-2 text-center">
@@ -119,7 +141,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <div className="frame">
-                    <img src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131635/1280px-Partner_logo.svg_klbypu.png" />
+                    <img
+                      alt=""
+                      src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619131635/1280px-Partner_logo.svg_klbypu.png"
+                    />
                   </div>
                   <div className=" card nav-layout">
                     <h5 className="m-2 text-center">{translate("partner")}</h5>
