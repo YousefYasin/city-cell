@@ -11,7 +11,7 @@ td,
 label h4 {
   font-family: "Montserrat", sans-serif;
   /* color: #000000; */
-  font-weight: bolder ;
+  font-weight: bolder;
 }
 
 body,
@@ -146,7 +146,17 @@ input :not(input) {
   font-size: 5.8rem;
   font-weight: bolder !important;
 }
-.creadit-text{
+.creadit-text {
   color: #74d099;
   font-size: 1.5rem;
+}
+::-webkit-input-placeholder {
+  /* Edge */
+  color: #000 !important;
+  font-weight: 400;
+  font-size: 1 rem;
+}
+input[type="text"],
+input[type="password"] {
+  font-weight: 700;
 }

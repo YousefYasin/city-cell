@@ -17,8 +17,7 @@ const TypeChargeJa = () => {
         <div className="col-lg-9 col-md-8 col-sm-6">
           <div className="card card-home">
             <div
-              className="card img
-            alt =''-back"
+              className="card img-back"
             >
               <div className="m-3">
                 <h1 className="header-text mt-5">{translate("newProduct")}</h1>
@@ -70,7 +69,13 @@ const TypeChargeJa = () => {
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
-                  <Link to={`/jawwal3g/${history.split("/")[2]}`}>
+                  <Link
+                    to={`/jawwal3g/${history.split("/")[2]}`}
+                    data-toggle="tooltip"
+                    title="Popover title"
+                    data-container="body"
+                    data-content="And here's some amazing content. It's very engaging. Right?"
+                  >
                     <div className="frame">
                       <img
                         alt=""

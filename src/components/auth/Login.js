@@ -4,8 +4,9 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import { useIntl } from "react-intl";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
+import { loginUser } from "./../../actions/userAction";
 import validateLoginInput from "../../validation/validateLoginInput";
-const Login = () => {
+const Login = ({ loginUser }) => {
   const intl = useIntl();
 
   const [loginForm, setLoginForm] = useState({
@@ -24,6 +25,8 @@ const Login = () => {
     if (!isValid) {
       setErrors1(errors);
       console.log("Errors=> ", errors);
+    } else {
+      loginUser(loginForm);
     }
   };
   return (
@@ -98,5 +101,7 @@ const Login = () => {
     </div>
   );
 };
-
-export default Login;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+export default connect(mapStateToProps, { loginUser })(Login);

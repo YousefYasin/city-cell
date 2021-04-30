@@ -19,15 +19,8 @@ export const loginUser = (userData, history) => (dispatch) => {
       //save to local storage
       const { token } = res.data.data;
 
-      // localStorage.setItem("jwtAdminToken", token);
-      //set current user
-
-      dispatch(setCurrentAdmin(res.data.data.data));
-
       //set token to local storage
       localStorage.setItem("jwtUserToken", token);
-      //Decode token to get user data
-      const decode = jwt_decode(token);
       //set current user
       dispatch(setCurrentUser(res.data.data.data));
       history.push("/");
@@ -54,10 +47,4 @@ export const logoutUser = (router) => async (dispatch) => {
 
   dispatch(setCurrentUser({}));
   setTimeout(router.push("/login"), 1000);
-};
-
-export const clearErrors = () => {
-  return {
-    type: CLEAR_ERRORS,
-  };
 };
