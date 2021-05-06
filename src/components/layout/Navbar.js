@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ReactFlagsSelect from "react-flags-select";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import translate from "../../i18n/translate";
+import { logoutUser } from "./../../actions/userAction";
+import { connect } from "react-redux";
 import "./nav.css";
-const Navbar = () => {
+const Navbar = ({ isAuthenticated, logoutUser }) => {
+  const history = useHistory();
   const [selected, setSelected] = useState("PS");
   useEffect(() => {
     if (localStorage.langCity === "en") {
@@ -22,6 +25,9 @@ const Navbar = () => {
       localStorage.langCity = "is";
     }
     window.location.reload();
+  };
+  const onLogoutClick = () => {
+    logoutUser(history);
   };
   return (
     <nav
@@ -47,16 +53,32 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link className="nav-link active" to="/signUp">
-                {translate("signUp")}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link active" to="/Login">
-                {translate("login")}
-              </Link>
-            </li>
+            {!isAuthenticated && (
+              <li className="nav-item">
+                <Link className="nav-link active" to="/signUp">
+                  {translate("signUp")}
+                </Link>
+              </li>
+            )}
+            {!isAuthenticated && (
+              <li className="nav-item">
+                <Link className="nav-link active" to="/Login">
+                  {translate("login")}
+                </Link>
+              </li>
+            )}
+            {isAuthenticated && (
+              <li className="nav-item">
+                <a
+                  className="nav-link active"
+                  style={{ cursor: "pointer" }}
+                  onClick={onLogoutClick}
+                  // href="login"
+                >
+                  {translate("logout")}
+                </a>
+              </li>
+            )}
           </ul>
           <ReactFlagsSelect
             color={"#fff"}
@@ -72,5 +94,7 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+export default connect(mapStateToProps, { logoutUser })(Navbar);

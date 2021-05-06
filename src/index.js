@@ -10,15 +10,19 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+const body = document.getElementsByTagName("body")[0];
 if (localStorage.langCity === "en") {
-  document.getElementsByTagName("body")[0].setAttribute("dir", "ltr");
-  document.getElementsByTagName("body")[0].setAttribute("lang", "en");
+  body.setAttribute("dir", "ltr");
+  body.setAttribute("lang", "en");
+  body.classList.add("english");
 } else if (!localStorage.langCity) {
-  document.getElementsByTagName("body")[0].setAttribute("dir", "ltr");
-  document.getElementsByTagName("body")[0].setAttribute("lang", "ar");
+  body.setAttribute("dir", "ltr");
+  body.setAttribute("lang", "ar");
+  body.classList.add("arabic");
 } else {
-  document.getElementsByTagName("body")[0].setAttribute("dir", "rtl");
-  document.getElementsByTagName("body")[0].setAttribute("lang", "ar");
+  body.setAttribute("dir", "rtl");
+  body.setAttribute("lang", "ar");
+  body.classList.add("arabic");
 }
 
 // reportWebVitals(console.log);

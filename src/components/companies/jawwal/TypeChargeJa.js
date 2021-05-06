@@ -16,9 +16,7 @@ const TypeChargeJa = () => {
         </div>
         <div className="col-lg-9 col-md-8 col-sm-6">
           <div className="card card-home">
-            <div
-              className="card img-back"
-            >
+            <div className="card img-back">
               <div className="m-3">
                 <h1 className="header-text mt-5">{translate("newProduct")}</h1>
               </div>
@@ -40,9 +38,13 @@ const TypeChargeJa = () => {
                 </label>
                 <label
                   for="inputEmail3"
-                  className="col-sm-3 col-form-label mobile-no"
+                  className="col-sm-4 col-form-label mobile-no"
                 >
-                  {history.split("/")[2]}
+                  {history.split("/")[3].slice(3, 6) +
+                    "-" +
+                    history.split("/")[3].slice(6, 9) +
+                    "-" +
+                    history.split("/")[3].slice(9, 13)}
                 </label>
               </div>
             </div>
@@ -51,7 +53,7 @@ const TypeChargeJa = () => {
             <div className="row d-flex  justify-content-center  m-5">
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
-                  <Link to={`/jawwalCredit/${history.split("/")[2]}`}>
+                  <Link to={`/company/jawwalCredit/${history.split("/")[3]}`}>
                     <div className="frame">
                       <img
                         alt=""
@@ -70,7 +72,7 @@ const TypeChargeJa = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
                   <Link
-                    to={`/jawwal3g/${history.split("/")[2]}`}
+                    to={`/company/jawwal3g/${history.split("/")[3]}`}
                     data-toggle="tooltip"
                     title="Popover title"
                     data-container="body"
@@ -93,7 +95,7 @@ const TypeChargeJa = () => {
               </div>
               <div className="col-lg-3 col-md-4 col-sm-6 mt-4">
                 <div className="card outer-wrapper">
-                  <Link to={`/jawwalMin/${history.split("/")[2]}`}>
+                  <Link to={`/company/jawwalMin/${history.split("/")[3]}`}>
                     <div className="frame">
                       <img
                         alt=""

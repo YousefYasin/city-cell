@@ -15,3 +15,52 @@
 .mobile-semi {
   color: #fff;
 }
+.charge-card :hover {
+  transform: translateY(0) scale(1.1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  opacity: 0.9;
+}
+.fixed-top1 {
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  /* border: 2px solid #25ace3; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 0.95;
+}
+.frame1 {
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  cursor: pointer;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  background-color: red;
+  align-items: center;
+  justify-content: center;
+}
+.close-btn > i {
+  color: #fff;
+}
+.close-btn:hover > i {
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.active-sub {
+  color: #42ace3;
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+.sub-nav {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.details {
+  cursor: pointer;
+  text-decoration: none;
+}

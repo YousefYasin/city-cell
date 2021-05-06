@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
-
+@font-face {
+  font-family: "Helvetica Neue W23-regular";
+  src: url('../../assests//fonts/Helvetica\ Neue\ W23-bold.TTF');
+}
+@font-face {
+  font-family: "Helvetica Neue W23-bold";
+  src: url("../../assests/fonts/Helvetica\ Neue\ W23-regular.TTF");
+}
+body.english {
+  font-family: "Montserrat", sans-serif;
+  /* color: #000000; */
+}
+body.arabic {
+  font-family:"Helvetica Neue W23-regular" ;
+  /* color: #000000; */
+}
 span,
 h1,
 h2,
@@ -8,9 +23,8 @@ h5,
 h6,
 div,
 td,
-label h4 {
-  font-family: "Montserrat", sans-serif;
-  /* color: #000000; */
+label,
+h4 {
   font-weight: bolder;
 }
 
@@ -157,6 +171,67 @@ input :not(input) {
   font-size: 1 rem;
 }
 input[type="text"],
+input[type="mobile"],
+input[type="email"],
+input,
 input[type="password"] {
   font-weight: 700;
 }
+
+/*LOGIN PAGE */
+.hero1 {
+  /* display: table; */
+  position: relative;
+  background: url("https://res.cloudinary.com/dtu4lltbk/image/upload/v1619824122/bg-login_qz50qv.jpg")
+    no-repeat;
+  padding: 150px 0;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  width: 100%;
+  height: auto;
+}
+.hero1:after {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  /* background: rgba(0, 0, 0, 0.65); */
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.hero1 .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.login-body {
+  overflow: hidden;
+  margin: 0 auto;
+  /* position: relative; */
+  height: auto;
+}
+
+.login-body {
+  /* width: 100%; */
+  /* height: 380px; */
+
+  color: #ffffff;
+  background-color: #292b2c;
+}
+
+/* .p-grid {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+} */

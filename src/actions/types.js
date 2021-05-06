@@ -6,3 +6,5 @@ export const GET_ERRORS = "GET_ERRORS";
 export const GET_JAWWAL_3G = "GET_JAWWAL_3G";
 export const GET_JAWWAL_CREDIT = "GET_JAWWAL_CREDIT";
 export const GET_JAWWAL_MIN = "GET_JAWWAL_MIN";
+export const GET_JAWWAL_CHARGE = "GET_JAWWAL_CHARGE";
+export const ADD_JAWWAL_CHARGE = "ADD_JAWWAL_CHARGE";

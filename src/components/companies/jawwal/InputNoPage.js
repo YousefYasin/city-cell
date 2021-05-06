@@ -20,9 +20,12 @@ const InputNoPage = () => {
     if (value === "") {
       setIsEmprty(true);
     } else {
-      console.log("TODOOOOO", value);
       setIsEmprty(false);
-      history.push(`/jawwal/${value}`);
+      localStorage.setItem("chargeJawwal", JSON.stringify({ charge: [] }));
+      localStorage.removeItem("jawwalMin");
+      localStorage.removeItem("jawwal3g");
+      localStorage.removeItem("JawwalCredit");
+      history.push(`/company/jawwal/${value}`);
     }
   };
   return (

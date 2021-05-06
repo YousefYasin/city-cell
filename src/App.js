@@ -9,13 +9,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/homePage/Home";
 import { logoutUser, setCurrentUser } from "./actions/userAction";
 import setAuthToken from "./components/common/setAuthToken";
+import PrivateRoute from "./components/common/PrivateRoute";
+import jwt_decode from "jwt-decode";
+
 if (localStorage.jwtUserToken) {
   // Set Auth token header
   setAuthToken(localStorage.jwtUserToken);
   //decode token  and get user info
-  const decode = localStorage.jwtUserToken;
+  const decode = jwt_decode(localStorage.jwtUserToken);
+  console.log(decode, typeof decode);
   //set user and isAuth
-  store.dispatch(setCurrentUser(decode)); // u can dispatch any action u want to store
+  store.dispatch(setCurrentUser(JSON.parse(localStorage.getItem("companies")))); // u can dispatch any action u want to store
   //check for expired token
   const currentTime = Date.now() / 1000;
   if (decode.exp < currentTime) {
@@ -41,7 +45,7 @@ function App() {
           <Fragment>
             <Navar />
             <Switch>
-              <Route exact path="/" component={Home} />
+              <PrivateRoute exact path="/" component={Home} />
               <Route component={Routes} />
             </Switch>
           </Fragment>

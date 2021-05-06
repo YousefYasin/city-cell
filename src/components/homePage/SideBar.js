@@ -3,14 +3,15 @@ import { Link, useHistory } from "react-router-dom";
 import translate from "../../i18n/translate";
 import { connect } from "react-redux";
 
-const SideBar = ({ auth }) => {
+const SideBar = ({ user }) => {
   const history = useHistory().location.pathname;
+  console.log(history);
   return (
     <div>
       <div className="card d100-vh">
         <div className="card card-bal m-3">
           <div className="m-3 text-center">
-            <h6 >
+            <h6>
               <i
                 className="icon-main fa fa-balance-scale m-1"
                 aria-hidden="true"
@@ -18,14 +19,17 @@ const SideBar = ({ auth }) => {
               {translate("balance")}
             </h6>
             <h4 className="main-text mt-3" style={{ fontWeight: "bolder" }}>
-              245,563 {translate("nis")}
+              {user.current_balance} {translate("nis")}
             </h4>
-            <h6 className ='mt-3' >Remal-Jawwal center</h6>
+            <h6 className="mt-3">{user.sellername}</h6>
           </div>
         </div>
         <div className="mt-3">
           <div
-            className={`sidebar__link ${history === "/" && "active-link"} m-4`}
+            className={`sidebar__link ${
+              history === "/" ||
+              (history.split("/")[1] === "company" && "active-link")
+            } m-4`}
           >
             <Link className=" link-main " to="/">
               <span>
@@ -114,6 +118,6 @@ const SideBar = ({ auth }) => {
   );
 };
 const mapStateToProps = (state) => ({
-  auth: state.auth,
+  user: state.auth.user,
 });
 export default connect(mapStateToProps, {})(SideBar);

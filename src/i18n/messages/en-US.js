@@ -17,12 +17,12 @@ export default {
     email: "Email",
     address: "Address",
     haveAccount: "already have an account? ",
-    mobileNumber: "Mobile Num.",
+    mobileNumber: "Mobile NO.",
     village: "Village",
     //sign up page
 
     login: "Login",
-    userName: "User name",
+    userName: "Username",
 
     //Home page
     home: "Home",
@@ -102,5 +102,7 @@ export default {
     jawwalOfferCredit: "Jawwal Credit Offers For This Number",
     amount: "Amount",
     accept: "Accept",
+    logout: "Logout",
+    total: "Total",
   },
 };

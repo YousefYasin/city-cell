@@ -1,12 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import translate from "../../i18n/translate";
 import TextFieldGroup from "../common/TextFieldGroup";
 import { useIntl } from "react-intl";
 import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
+import { signUpUser } from "./../../actions/userAction";
+import axios from "axios";
 import "./auth.css";
 import validateSignUpInput from "../../validation/validateSignUpInput";
-const SignUp = () => {
+const SignUp = ({ isAuthenticated, signUpUser }) => {
+  const history = useHistory();
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    document.title = "City-Cell/Sign up";
+    if (isAuthenticated) {
+      history.push("/");
+    }
+    axios
+      .get("http://newapi.citycell.me/api/v1/resources/getsellerno")
+      .then((res) => {
+        console.log(res.data);
+        setUserName(res.data);
+      });
+  }, []);
   const [signUpForm, setSignUpForm] = useState({
     fullName: "",
     email: "",
@@ -14,6 +31,8 @@ const SignUp = () => {
     password: "",
     password2: "",
     address: "",
+    country: "palestine",
+    city: "",
   });
   const [errors1, setErrors1] = useState({});
 
@@ -26,45 +45,63 @@ const SignUp = () => {
     const { errors, isValid } = validateSignUpInput(signUpForm);
     if (!isValid) {
       setErrors1(errors);
+      console.log(errors);
+    } else {
+      signUpUser(signUpForm, userName, history);
     }
   };
   return (
-    <div className="container-fluid">
-      <form onSubmit={(e) => onSubmit(e)}>
-        <div className=" ">
-          <div className="row ">
-            <div className="col-md-4 mt-5">
-              <div className="card mt-5">
-                <img src="https://res.cloudinary.com/dznido8dg/image/upload/v1603525588/Group_2489_2x_jgvdlx.png" />
+    <div>
+      <section className="hero1">
+        <div className="container text-center">
+          <div className="row">
+            <div className="col-md-12"></div>
+          </div>
+
+          <div className="col-md-12 text-center d-flex justify-content-center"></div>
+        </div>
+      </section>
+      <div className="login-body">
+        <div className="row">
+          <div className="col-md-3"></div>
+          <div className="col-md-6 text-center">
+            <div className="row">
+              <div className="p-col-3">
+                <img
+                  src="https://res.cloudinary.com/dtu4lltbk/image/upload/v1619824642/icon-login_df0nqj.svg"
+                  alt="avalon-layout"
+                />
               </div>
             </div>
-            <div className="col-lg-8 col-md-8 mt-5">
-              <div className="card ">
-                <h4 className="m-4 sign-text">
-                  <strong>{translate("signUp")}</strong>
-                </h4>
+            <div className="p-col-9">
+              <h2 className="welcome-text">Welcome Guest</h2>
+            </div>
+            <span className="guest-sign-in">Sign up to City-Cell Network</span>
+
+            <div className="mt-3  ">
+              <form onSubmit={(e) => onSubmit(e)}>
                 <div className="  text-left m-4">
                   <div className="row mb-3">
                     <label
                       for="inputEmail3"
-                      className="col-sm-2 col-form-label"
+                      className="col-sm-3 col-form-label"
                     >
                       {translate("userName")}
                     </label>
-                    <div className="col-sm-5">
+                    <div className="col-sm-7">
                       <label for="inputEmail3" className="col-form-label">
-                        From back-end
+                        {userName}
                       </label>
                     </div>
                   </div>
                   <div className="row mb-3">
                     <label
                       for="inputEmail3"
-                      className="col-sm-2 col-form-label"
+                      className="col-sm-3 col-form-label"
                     >
                       {translate("fullname")}
                     </label>
-                    <div className="col-sm-5">
+                    <div className="col-sm-7">
                       <TextFieldGroup
                         className="mb-5"
                         placeholder={intl.formatMessage({ id: "enter0" })}
@@ -78,29 +115,28 @@ const SignUp = () => {
                   <div className="row mb-3">
                     <label
                       for="inputEmail3"
-                      className="col-sm-2 col-form-label"
+                      className="col-sm-3 col-form-label"
                     >
                       {translate("email")}
                     </label>
-                    <div className="col-sm-5">
+                    <div className="col-sm-7">
                       <TextFieldGroup
                         placeholder={intl.formatMessage({ id: "enter1" })}
                         name="email"
                         type="email"
                         value={signUpForm.email}
                         onChange={onChange}
-                        //   error={emailError ? emailError : errors1.email}
                       />
                     </div>
                   </div>
                   <div className="row mb-3">
                     <label
                       for="inputEmail3"
-                      className="col-sm-2 col-form-label"
+                      className="col-sm-3 col-form-label"
                     >
                       {translate("mobileNumber")}
                     </label>
-                    <div className="col-sm-5">
+                    <div className="col-sm-7">
                       <TextFieldGroup
                         placeholder={intl.formatMessage({ id: "enter2" })}
                         name="mobile"
@@ -111,40 +147,55 @@ const SignUp = () => {
                       />
                     </div>
                   </div>
-                  <div className="row mb-3">
+                  <div class="form-row">
+                    <input
+                      class="form-check-input col m-2"
+                      type="radio"
+                      name="country"
+                      id="inlineRadio1"
+                      value="palestine"
+                      onChange={onChange}
+                    />
+                    <label class="form-check-label col m-1" for="inlineRadio1">
+                      palestine
+                    </label>
+                    <input
+                      class="form-check-input col m-2"
+                      type="radio"
+                      name="country"
+                      id="inlineRadio1"
+                      value="israel"
+                      onChange={onChange}
+                    />
+                    <label class="form-check-label col m-1" for="inlineRadio1">
+                      israel
+                    </label>
+                  </div>
+                  <div className="row mb-3  mt-3">
                     <label
                       for="inputEmail3"
-                      className="col-sm-2 col-form-label"
+                      className="col-sm-3 col-form-label"
                     >
-                      {translate("country")}
+                      City
                     </label>
-                    <div className="col-sm-5">
-                      <select className="form-select">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                      </select>
-                    </div>
-                    <label
-                      for="inputEmail3"
-                      className="col-sm-2 col-form-label"
-                    >
-                      {translate("village")}
-                    </label>
-                    <div className="col-sm-3">
-                      <select className="form-select">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                      </select>
+                    <div className="col-sm-7">
+                      <TextFieldGroup
+                        className="mb-5"
+                        name="city"
+                        value={signUpForm.city}
+                        onChange={onChange}
+                        error={errors1.city}
+                      />
                     </div>
                   </div>
                   <div className="row mb-3">
                     <label
                       for="inputEmail3"
-                      className="col-sm-2 col-form-label"
+                      className="col-sm-3 col-form-label"
                     >
                       {translate("address")}
                     </label>
-                    <div className="col-sm-5">
+                    <div className="col-sm-7">
                       <TextFieldGroup
                         className="mb-5"
                         placeholder={intl.formatMessage({ id: "enter3" })}
@@ -158,11 +209,11 @@ const SignUp = () => {
                   <div className="row mb-3">
                     <label
                       for="inputEmail3"
-                      className="col-sm-2 col-form-label"
+                      className="col-sm-3 col-form-label"
                     >
                       {translate("password")}
                     </label>
-                    <div className="col-sm-5">
+                    <div className="col-sm-7">
                       <TextFieldGroup
                         placeholder={intl.formatMessage({ id: "password" })}
                         name="password"
@@ -176,11 +227,12 @@ const SignUp = () => {
                   <div className="row mb-3">
                     <label
                       for="inputEmail3"
-                      className="col-sm-2 col-form-label"
+                      className="col-sm-3 col-form-label"
                     >
                       {translate("confirmPassword")}
                     </label>
-                    <div className="col-sm-5">
+
+                    <div className="col-sm-7">
                       <TextFieldGroup
                         placeholder={intl.formatMessage({
                           id: "confirmPassword",
@@ -193,27 +245,32 @@ const SignUp = () => {
                       />
                     </div>
                   </div>
-                  <div className="col-md-7">
-                    <button
-                      className="btn sign-but "
-                      type="submit"
-                      style={{ width: "100%" }}
-                    >
-                      {translate("register1")}
-                    </button>
+                  <div className="row">
+                    <div className="col-md-3"></div>
+                    <div className="col-md-7 text-center">
+                      <button
+                        className="btn sign-but "
+                        type="submit"
+                        style={{ width: "100%" }}
+                      >
+                        {translate("register1")}
+                      </button>
+                    </div>
                   </div>
                   <label for="inputEmail3" className=" col-form-label">
                     {translate("haveAccount")}
                   </label>{" "}
                   <Link to="/login">{translate("login")}</Link>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
-
-export default SignUp;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+export default connect(mapStateToProps, { signUpUser })(SignUp);
